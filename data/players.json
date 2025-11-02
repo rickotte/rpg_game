@@ -1,0 +1,34 @@
+{
+  "players": [
+    {
+      "name": "Arin",
+      "max_hp": 100,
+      "attacks": {"Slash": 12, "Quick Jab": 10},
+      "skills": {
+        "Blade Storm": {"damage": 20, "cost": 10},
+        "Piercing Strike": {"damage": 18, "cost": 8}
+      },
+      "max_mp": 40
+    },
+    {
+      "name": "Lira",
+      "max_hp": 90,
+      "attacks": {"Fireball": 14, "Spark": 10},
+      "skills": {
+        "Flame Burst": {"damage": 22, "cost": 10},
+        "Inferno": {"damage": 26, "cost": 15}
+      },
+      "max_mp": 50
+    },
+    {
+      "name": "Kain",
+      "max_hp": 110,
+      "attacks": {"Punch": 11, "Kick": 13},
+      "skills": {
+        "Power Smash": {"damage": 20, "cost": 8},
+        "Rage Breaker": {"damage": 24, "cost": 12}
+      },
+      "max_mp": 35
+    }
+  ]
+}

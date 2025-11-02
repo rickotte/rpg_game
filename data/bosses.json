@@ -1,0 +1,14 @@
+{
+  "bosses": [
+    {
+      "name": "Gorath, the Ravager",
+      "max_hp": 250,
+      "attacks": {"Crush": 18, "Stomp": 22},
+      "skills": {
+        "Earthquake": {"damage": 35, "cost": 15},
+        "Fury Roar": {"damage": 30, "cost": 10}
+      },
+      "max_mp": 60
+    }
+  ]
+}
