@@ -1,32 +1,77 @@
-import time, sys
+import time
+import sys
+import msvcrt
 
 
-class TimingBar:
-    def __init__(self, duration=3, length=30):
-        self.duration = duration
-        self.length = length
+def attack_timing_bar():
+    bar_length = 20
+    print("\nTiming Bar (Press Enter):")
+    pressed = False
+    hit_zone = None
 
-    def get_color(self, ratio):
-        if ratio > 0.6:
-            return "\033[97m"  # White
-        elif ratio > 0.3:
-            return "\033[93m"  # Yellow
-        else:
-            return "\033[91m"  # Red
+    for i in range(bar_length, 0, -1):
+        color = "\033[97m"  # white
+        if i <= 7:
+            color = "\033[91m"  # red
 
-    def run(self):
-        start_time = time.time()
-        while True:
-            elapsed = time.time() - start_time
-            ratio = max(0, 1 - elapsed / self.duration)
-            filled = int(self.length * ratio)
-            color = self.get_color(ratio)
-            bar = "█" * filled + "-" * (self.length - filled)
-            sys.stdout.write(
-                f"\r{color}[{bar}]\033[0m {self.duration - elapsed:4.1f}s "
-            )
-            sys.stdout.flush()
-            if elapsed >= self.duration:
+        sys.stdout.write(f"\r{color}{'█' * i:<{bar_length}}\033[0m")
+        sys.stdout.flush()
+        time.sleep(0.05)
+
+        # Check if Space is pressed in real time
+        if msvcrt.kbhit():
+            key = msvcrt.getch()
+            if key in [b"\r"]:
+                pressed = True
+                hit_zone = "red" if i <= 7 else "white"
                 break
-            time.sleep(0.05)
-        print("\n")
+
+    sys.stdout.write("\033[0m\n")  # Reset color
+    if not pressed:
+        print("You didn’t strike at all. Stop sleeping!")
+        return 0.0
+    elif hit_zone == "red":
+        print("Perfect")
+        return 2.0
+    else:
+        print("Too Early")
+        return 1.0
+
+
+def defend_timing_bar():
+    bar_length = 20
+    print("\nDefend Timing (Press Space):")
+    pressed = False
+    result = "fail"
+    time.sleep(1)
+
+    for i in range(bar_length, 0, -1):
+        if i > 7:
+            color = "\033[97m"  # white
+        else:
+            color = "\033[91m"  # red
+
+        sys.stdout.write(f"\r{color}{'█' * i:<{bar_length}}\033[0m")
+        sys.stdout.flush()
+        time.sleep(0.05)
+
+        if msvcrt.kbhit():
+            key = msvcrt.getch()
+            if key in [b"\r"]:
+                pressed = True
+                if i <= 7:
+                    result = "parry"
+                else:
+                    result = "defend"
+                break
+
+    sys.stdout.write("\033[0m\n")
+
+    if not pressed:
+        print("Failed to defend — took full damage!")
+        return "fail"
+    elif result == "parry":
+        print("Perfect Parry! Counterattack triggered!")
+    else:
+        print("Successful Defend! No damage taken.")
+    return result

@@ -1,34 +1,31 @@
-{
-  "players": [
-    {
-      "name": "Arin",
-      "max_hp": 100,
-      "attacks": {"Slash": 12, "Quick Jab": 10},
-      "skills": {
-        "Blade Storm": {"damage": 20, "cost": 10},
-        "Piercing Strike": {"damage": 18, "cost": 8}
-      },
-      "max_mp": 40
-    },
-    {
-      "name": "Lira",
-      "max_hp": 90,
-      "attacks": {"Fireball": 14, "Spark": 10},
-      "skills": {
-        "Flame Burst": {"damage": 22, "cost": 10},
-        "Inferno": {"damage": 26, "cost": 15}
-      },
-      "max_mp": 50
-    },
-    {
-      "name": "Kain",
-      "max_hp": 110,
-      "attacks": {"Punch": 11, "Kick": 13},
-      "skills": {
-        "Power Smash": {"damage": 20, "cost": 8},
-        "Rage Breaker": {"damage": 24, "cost": 12}
-      },
-      "max_mp": 35
-    }
-  ]
-}
+[
+  {
+    "name": "Aiden",
+    "max_hp": 120,
+    "max_mp": 50,
+    "attack": 25,
+    "skills": [
+      {"name": "Power Slash", "type": "attack", "mp_cost": 15, "power": 40},
+      {"name": "Blazing Strike", "type": "attack", "mp_cost": 25, "power": 36}
+    ]
+  },
+  {
+    "name": "Lira",
+    "max_hp": 90,
+    "max_mp": 80,
+    "attack": 18,
+    "skills": [
+      {"name": "Healing Light", "type": "heal", "mp_cost": 20, "power": 20},
+      {"name": "Holy Beam", "type": "attack", "mp_cost": 25, "power": 45}
+    ]
+  },
+  {
+    "name": "Rex",
+    "max_hp": 150,
+    "max_mp": 40,
+    "attack": 30,
+    "skills": [
+      {"name": "Crushing Blow", "type": "attack", "mp_cost": 20, "power": 55}
+    ]
+  }
+]

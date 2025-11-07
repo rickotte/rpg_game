@@ -1,14 +1,12 @@
-{
-  "bosses": [
-    {
-      "name": "Gorath, the Ravager",
-      "max_hp": 250,
-      "attacks": {"Crush": 18, "Stomp": 22},
-      "skills": {
-        "Earthquake": {"damage": 35, "cost": 15},
-        "Fury Roar": {"damage": 30, "cost": 10}
-      },
-      "max_mp": 60
-    }
-  ]
-}
+[
+  {
+    "name": "Dreadfang",
+    "max_hp": 1000,
+    "max_mp": 0,
+    "attack": 30,
+    "skills": [
+      {"name": "Claw Swipe", "type": "attack", "power": 40},
+      {"name": "Dark Roar", "type": "attack", "power": 55}
+    ]
+  }
+]
