@@ -5,30 +5,6 @@ Featuring dynamic color-coded timing bars, player mana management, and boss AI t
 
 ---
 
-## Project Structure
-
-project_root/
-│
-├── main.py
-│
-├── characters/
-│ ├── init.py
-│ ├── base_character.py
-│ ├── player_team.py
-│ └── boss.py
-│
-├── combat/
-│ ├── init.py
-│ ├── battle.py
-│ └── timing_bar.py
-│
-└── data/
-├── players.json
-└── bosses.json
-
-
----
-
 ## Setup Instructions
 
 1. **Clone or Download** the repository.
