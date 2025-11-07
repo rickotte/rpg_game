@@ -18,7 +18,7 @@ def attack_timing_bar():
         sys.stdout.flush()
         time.sleep(0.05)
 
-        # Check if Space is pressed in real time
+        # Check if Enter is pressed in real time
         if msvcrt.kbhit():
             key = msvcrt.getch()
             if key in [b"\r"]:
@@ -40,7 +40,7 @@ def attack_timing_bar():
 
 def defend_timing_bar():
     bar_length = 20
-    print("\nDefend Timing (Press Space):")
+    print("\nDefend Timing (Press Enter):")
     pressed = False
     result = "fail"
     time.sleep(1)
